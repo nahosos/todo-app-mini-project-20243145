@@ -41,4 +41,12 @@ app.delete('/api/todos/:id', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`서버 실행 중: http://localhost:${PORT}`));
+//app.listen(PORT, () => console.log(`서버 실행 중: http://localhost:${PORT}`));
+
+// 로컬 개발 환경에서는 listen 실행
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => console.log(`🚀 서버 실행 중: http://localhost:${PORT}`));
+}
+
+// Vercel 배포용: app 객체 export
+module.exports = app;
