@@ -4,7 +4,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./calendar.css";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL || "/api/todos";
 
 // 한국 시간 기준 YYYY-MM-DD 포맷 함수
 const formatDate = (date) => {
